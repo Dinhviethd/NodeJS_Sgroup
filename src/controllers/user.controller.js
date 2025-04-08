@@ -26,8 +26,7 @@ const GetById = async( req, res, next ) => {
 const postAll= async (req, res, next) =>{
     try {
         const data= req.body;
-        const id= req.params.id;
-        const newUser= userService.Update(data, id)
+        const newUser= userService.Insert(data);
         return res.status(200).json({
             data: newUser,
             message: "Success"
